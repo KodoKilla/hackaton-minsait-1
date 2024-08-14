@@ -26,42 +26,42 @@ class MovieResourceTest {
 
   private Movie movie;
 
-  @BeforeEach
-  void setUp() {}
+  // @BeforeEach
+  // void setUp() {}
 
-  @Test
-  void getAll() {}
+  // @Test
+  // void getAll() {}
 
-  @Test
-  void getByIdOK() {}
+  // @Test
+  // void getByIdOK() {}
 
-  @Test
-  void getByIdKO() {}
+  // @Test
+  // void getByIdKO() {}
 
-  @Test
-  void getByTitleOK() {}
+  // @Test
+  // void getByTitleOK() {}
 
-  @Test
-  void getByTitleKO() {}
+  // @Test
+  // void getByTitleKO() {}
 
-  @Test
-  void getByCountry() {}
+  // @Test
+  // void getByCountry() {}
 
-  @Test
-  void createOK() {}
+  // @Test
+  // void createOK() {}
 
-  @Test
-  void createKO() {}
+  // @Test
+  // void createKO() {}
 
-  @Test
-  void updateByIdOK() {}
+  // @Test
+  // void updateByIdOK() {}
 
-  @Test
-  void updateByIdKO() {}
+  // @Test
+  // void updateByIdKO() {}
 
-  @Test
-  void deleteByIdOK() {}
+  // @Test
+  // void deleteByIdOK() {}
 
-  @Test
-  void deleteByIdKO() {}
+  // @Test
+  // void deleteByIdKO() {}
 }
