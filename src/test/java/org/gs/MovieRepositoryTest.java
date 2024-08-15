@@ -3,7 +3,6 @@ package org.gs;
 import static org.junit.jupiter.api.Assertions.*;
 
 import io.quarkus.test.junit.QuarkusTest;
-import io.smallrye.common.constraint.Assert;
 
 import java.util.List;
 import javax.inject.Inject;
@@ -15,10 +14,17 @@ class MovieRepositoryTest {
   @Inject
   MovieRepository movieRepository;
 
-  // @Test
-  // void findByCountryOK() {
-  // }
+  @Test
+  void findByCountryOK() {
+    List<Movie> movies = movieRepository.findByCountry("Planet");
+    assertNotNull(movies);
+    assertEquals(2, movies.size());
+  }
 
-  // @Test
-  // void findByCountryKO() {}
+  @Test
+  void findByCountryKO() {
+    List<Movie> movies = movieRepository.findByCountry("Planet2");
+    assertNotNull(movies);
+    assertEquals(0, movies.size());
+  }
 }

@@ -18,12 +18,23 @@ public class MovieResource {
 
   @Inject MovieRepository movieRepository;
 
+  /**
+   * Retrieves all movies.
+   *
+   * @return A Response object containing a list of Movie objects in JSON format.
+  */
   @GET
   public Response getAll() {
     List<Movie> movies = movieRepository.listAll();
     return Response.ok(movies).build();
   }
 
+  /**
+   * Retrieves a movie by its ID.
+   *
+   * @param id The ID of the movie to retrieve.
+   * @return A Response object containing the Movie object in JSON format.
+  */
   @GET
   @Path("{id}")
   public Response getById(@PathParam("id") Long id) {
@@ -33,6 +44,12 @@ public class MovieResource {
         .orElse(Response.status(NOT_FOUND).build());
   }
 
+  /**
+   * Retrieves a movie by its title.
+   *
+   * @param title The title of the movie to retrieve.
+   * @return A Response object containing the Movie object in JSON format.
+  */
   @GET
   @Path("title/{title}")
   public Response getByTitle(@PathParam("title") String title) {
@@ -43,6 +60,12 @@ public class MovieResource {
         .orElse(Response.status(NOT_FOUND).build());
   }
 
+  /**
+   * Retrieves a movie by its country.
+   *
+   * @param country The country of the movie to retrieve.
+   * @return A Response object containing a list of Movie objects in JSON format.
+  */
   @GET
   @Path("country/{country}")
   public Response getByCountry(@PathParam("country") String country) {
@@ -50,6 +73,13 @@ public class MovieResource {
     return Response.ok(movies).build();
   }
 
+  /**
+   * Creates a new movie.
+   *
+   * @param movie The movie to create.
+   * @return A Response object with a status code of 201 if the movie was created successfully, or a
+   *     status code of 400 if the movie was not created.
+  */
   @POST
   @Transactional
   public Response create(Movie movie) {
@@ -60,6 +90,14 @@ public class MovieResource {
     return Response.status(BAD_REQUEST).build();
   }
 
+  /**
+   * Updates a movie by its ID.
+   *
+   * @param id The ID of the movie to update.
+   * @param movie The updated movie object.
+   * @return A Response object containing the updated Movie object in JSON format if the movie was found and updated successfully, or a
+   *     status code of 404 if the movie was not found.
+  */
   @PUT
   @Path("{id}")
   @Transactional
@@ -74,6 +112,13 @@ public class MovieResource {
         .orElse(Response.status(NOT_FOUND).build());
   }
 
+  /**
+   * Deletes a movie by its ID.
+   *
+   * @param id The ID of the movie to delete.
+   * @return A Response object with a status code of 204 if the movie was deleted successfully, or a
+   *     status code of 404 if the movie was not found.
+  */
   @DELETE
   @Path("{id}")
   @Transactional

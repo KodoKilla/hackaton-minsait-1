@@ -22,6 +22,19 @@ public class Movie {
 
     private String country;
 
+    // Default
+    public Movie() {
+    }
+
+    // All args
+    public Movie(Long id, String title, String country, String description, String director) {
+        this.id = id;
+        this.title = title;
+        this.country = country;
+        this.description = description;
+        this.director = director;
+    }
+
     public String getTitle() {
         return title;
     }
